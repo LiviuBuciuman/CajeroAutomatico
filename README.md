@@ -5,4 +5,4 @@ Operaciones:
   - cambio de llaves
   - retirar dinero
   - alta nuevo usuario
-  - sortir
+  - salir
