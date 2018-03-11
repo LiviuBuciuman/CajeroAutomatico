@@ -57,6 +57,11 @@ public class CajeroAutomatico extends JFrame {
         JButton registerButton = new JButton("Registrar");
         registerButton.setBounds(290, 250, 90, 25);
 
+        JButton exitButton = new JButton("Salir");
+        exitButton.setBounds(400, 250, 90, 25);
+        mainPanel.add(exitButton);
+        exitButton.addActionListener(e -> System.exit(0));
+
         registerButton.addActionListener(e -> new Formulario().setVisible(true));
 
         mainPanel.add(registerButton);

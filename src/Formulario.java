@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Formulario extends JFrame {
 
     public Formulario() {
-        setTitle("Formulario Hola");
+        setTitle("Formulario");
         setSize(700, 500);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -70,7 +72,7 @@ public class Formulario extends JFrame {
         interesesLabel.setBounds(10, 300, 80, 25);
         mainPanel.add(interesesLabel);
 
-        String[] interesesArray = {"0%", "1%", "2%", "3%", "4%", "5%"};
+        String[] interesesArray = {"0", "1", "2", "3", "4", "5"};
 
         JComboBox interesesLista = new JComboBox<>(interesesArray);
         interesesLista.setSelectedIndex(0);
@@ -85,11 +87,29 @@ public class Formulario extends JFrame {
         otrosInteresesField.setBounds(300, 300, 160, 25);
         mainPanel.add(otrosInteresesField);
 
-        JButton guardarDatosButton = new JButton("Guardar");
+        JButton guardarDatosButton = new JButton("Guardar datos");
         guardarDatosButton.setBounds(80, 370, 160, 25);
         mainPanel.add(guardarDatosButton);
-
         guardarDatosButton.addActionListener(e -> System.out.println(nomField.getText()));
+
+        JButton resetButton = new JButton("Borrar campos");
+        resetButton.setBounds(260, 370, 160, 25);
+        mainPanel.add(resetButton);
+
+        JButton exitButton = new JButton("Salir");
+        exitButton.setBounds(440, 370, 90, 25);
+        mainPanel.add(exitButton);
+        exitButton.addActionListener(e -> System.exit(0));
+
+        //Botón que limpia los campos de texto
+        resetButton.addActionListener(e -> nomField.setText(""));
+        resetButton.addActionListener(e -> cognomsField.setText(""));
+        resetButton.addActionListener(e -> dniField.setText(""));
+        resetButton.addActionListener(e -> pinField.setText(""));
+        resetButton.addActionListener(e -> telefonoField.setText(""));
+        resetButton.addActionListener(e -> nacimientoField.setText(""));
+        resetButton.addActionListener(e -> otrosInteresesField.setText(""));
+        resetButton.addActionListener(e -> interesesLista.setSelectedIndex(0));
 
         getContentPane().add(mainPanel);
 
