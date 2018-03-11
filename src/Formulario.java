@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Formulario extends JFrame {
 
@@ -90,7 +91,21 @@ public class Formulario extends JFrame {
         JButton guardarDatosButton = new JButton("Guardar datos");
         guardarDatosButton.setBounds(80, 370, 160, 25);
         mainPanel.add(guardarDatosButton);
-        guardarDatosButton.addActionListener(e -> System.out.println(nomField.getText()));
+
+        ArrayList<String> listaDatos = new ArrayList<>();
+        String nom = nomField.getText();
+        System.out.println(nom);
+        listaDatos.add(nomField.getText());
+        listaDatos.add(cognomsField.getText());
+        listaDatos.add(dniField.getText());
+        listaDatos.add(pinField.getText());
+        listaDatos.add(telefonoField.getText());
+        listaDatos.add(nacimientoField.getText());
+        listaDatos.add(otrosInteresesField.getText());
+
+        for (String listaDato : listaDatos) {
+            System.out.println(listaDato);
+        }
 
         JButton resetButton = new JButton("Borrar campos");
         resetButton.setBounds(260, 370, 160, 25);
