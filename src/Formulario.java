@@ -93,19 +93,14 @@ public class Formulario extends JFrame {
         mainPanel.add(guardarDatosButton);
 
         ArrayList<String> listaDatos = new ArrayList<>();
-        String nom = nomField.getText();
-        System.out.println(nom);
-        listaDatos.add(nomField.getText());
-        listaDatos.add(cognomsField.getText());
-        listaDatos.add(dniField.getText());
-        listaDatos.add(pinField.getText());
-        listaDatos.add(telefonoField.getText());
-        listaDatos.add(nacimientoField.getText());
-        listaDatos.add(otrosInteresesField.getText());
 
-        for (String listaDato : listaDatos) {
-            System.out.println(listaDato);
-        }
+        guardarDatosButton.addActionListener(e -> listaDatos.add(nomField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(cognomsField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(dniField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(pinField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(telefonoField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(nacimientoField.getText()));
+        guardarDatosButton.addActionListener(e -> listaDatos.add(otrosInteresesField.getText()));
 
         JButton resetButton = new JButton("Borrar campos");
         resetButton.setBounds(260, 370, 160, 25);
