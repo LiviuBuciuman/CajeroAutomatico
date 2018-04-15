@@ -99,7 +99,7 @@ public class Formulario extends JFrame {
         JButton exitButton = new JButton("Salir");
         exitButton.setBounds(440, 370, 90, 25);
         mainPanel.add(exitButton);
-        exitButton.addActionListener(e -> System.exit(0));
+        exitButton.addActionListener(e -> dispose());
 
         //Botón que limpia los campos de texto
         resetButton.addActionListener(e -> nomField.setText(""));

@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class CajeroAutomatico extends JFrame {
 
-    private CajeroAutomatico() {
+    public CajeroAutomatico() {
         setTitle("Cajero Automatico");
         setSize(700, 500);
         setLayout(new BorderLayout());
@@ -62,6 +62,7 @@ public class CajeroAutomatico extends JFrame {
         mainPanel.add(exitButton);
         exitButton.addActionListener(e -> System.exit(0));
 
+        loginButton.addActionListener(e -> new Login().setVisible(true));
         registerButton.addActionListener(e -> new Formulario().setVisible(true));
 
         mainPanel.add(registerButton);
